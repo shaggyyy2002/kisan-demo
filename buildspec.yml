@@ -9,10 +9,6 @@ phases:
     - echo "Entered build phase"
     - mvn clean prepare-package war:exploded
     - mvn package
-  post_build:
-    commands:
-    - echo "Entered the post-build phase"
-    - mv target/jaikisan-demo-0.0.1-SNAPSHOT.war ./
 artifacts:
   files:
-    - jaikisan-demo-0.0.1-SNAPSHOT.war
+    - target/jaikisan-demo-0.0.1-SNAPSHOT.war
