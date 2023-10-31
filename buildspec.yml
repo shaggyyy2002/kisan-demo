@@ -1,14 +1,29 @@
 version: 0.2
+
 phases:
   pre_build:
     commands:
     - echo "Entered the pre-build phase"
     - mvn test
+
   build:
     commands:
     - echo "Entered build phase"
     - mvn clean prepare-package war:exploded
     - mvn package
+    - mv target/jaikisan-demo-0.0.1-SNAPSHOT ./
+    - mv target/jaikisan-demo-0.0.1-SNAPSHOT.war ROOT.war
+
+  deploy:
+    actions:
+    - action: aws/codepipeline/steps/elastic-beanstalk-deploy
+      name: DeployToBeanstalk
+      region: ap-south-1
+      applicationName: devops-proj
+      environmentName: Devops-proj-env
+      deploymentPackage: ./ROOT.war
+
 artifacts:
   files:
-    - target/jaikisan-demo-0.0.1-SNAPSHOT.war
+    - jaikisan-demo-0.0.1-SNAPSHOT/**/*
+    - ROOT.war
