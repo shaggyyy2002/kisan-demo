@@ -13,7 +13,7 @@ phases:
     commands:
     - echo "Entered the post-build phase"
     - mv target/jaikisan-demo-0.0.1-SNAPSHOT ./
-    - mv target/jaikisan-demo-0.0.1-SNAPSHOT.war
+    - mv target/jaikisan-demo-0.0.1-SNAPSHOT.war ./
 artifacts:
   files:
     - jaikisan-demo-0.0.1-SNAPSHOT/**/*
