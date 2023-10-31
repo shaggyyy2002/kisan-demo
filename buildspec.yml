@@ -14,4 +14,4 @@ phases:
     - mv target/jaikisan-demo-0.0.1-SNAPSHOT ./
 artifacts:
   files:
-    - deploy/**/*
+    - jaikisan-demo-0.0.1-SNAPSHOT/**/*
