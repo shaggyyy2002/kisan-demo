@@ -23,4 +23,4 @@ Create a CI/CD pipeline for a simple web application using AWS CodePipeline, AWS
 
 ## REST Endpoints
 - Actuator endpoints are enabled under `/actuator/*`
-- Sample `HelloController` enabled under `/hello`.
+- Sample `HelloController` enabled under `/hello`
