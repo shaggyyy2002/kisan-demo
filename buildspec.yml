@@ -1,14 +1,14 @@
 version: 0.2
-
 phases:
   pre_build:
     commands:
-      - echo "Entered the pre-build phase"
-      - mvn test
+    - echo "Entered the pre-build phase"
+    - mvn test
   build:
     commands:
-      - echo "Entered build phase"
-      - mvn clean package
+    - echo "Entered build phase"
+    - mvn clean prepare-package war:exploded
+    - mvn package
 artifacts:
   files:
     - target/jaikisan-demo-0.0.1-SNAPSHOT.war
